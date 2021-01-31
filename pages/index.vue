@@ -1,25 +1,25 @@
 <template>
-  <div class="container"></div>
+  <div class="container">
+    <signin-vue v-if="!user" @setUser="setUser" />
+  </div>
 </template>
 
 <script>
+import SigninVue from '~/components/Signin.vue'
+
 export default {
+  components: {
+    SigninVue,
+  },
   data: () => ({
     user: '',
   }),
-  mounted() {
-    const user = localStorage.getItem('compliments_user') || ''
-    this.user = user
-  },
-  updated() {
-    const user = localStorage.getItem('compliments_user') || ''
-    this.user = user
-  },
-  destroyed() {
-    localStorage.removeItem('compliments_user')
+  methods: {
+    setUser(user) {
+      this.user = user
+    },
   },
 }
 </script>
 
-<style>
-</style>
+<style></style>

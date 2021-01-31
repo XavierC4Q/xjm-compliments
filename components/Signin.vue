@@ -1,8 +1,8 @@
 <template>
   <div>
-    <form>
+    <form @submit.prevent="handleSubmit">
       <h2>Please enter your name</h2>
-      <input type="text" @change="handleChange" :value="user" />
+      <input type="text" :value="user" @change="handleChange" />
       <button type="submit">Submit</button>
     </form>
   </div>
@@ -17,6 +17,9 @@ export default {
   methods: {
     handleChange(e) {
       this.user = e.target.value
+    },
+    handleSubmit() {
+      this.$emit('setUser', this.user)
     },
   },
 }
