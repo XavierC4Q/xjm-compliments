@@ -25,4 +25,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.container {
+  padding: 0 0.8rem;
+  position: relative;
+}
+</style>

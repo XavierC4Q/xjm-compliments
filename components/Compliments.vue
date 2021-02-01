@@ -29,23 +29,24 @@ export default {
     this.getCompliment()
   },
   methods: {
-    getCompliment() {
+    async getCompliment() {
       this.loading = true
       this.error = false
       this.compliment = ''
 
-      this.$axios
-        .$get('https://complimentr.com/api')
-        .then(({ compliment }) => {
-          this.compliment = `${this.user}: ${compliment
-            .charAt(0)
-            .toUpperCase()}${compliment.substring(1)}`
-          this.loading = false
-        })
-        .catch(() => {
-          this.error = true
-          this.loading = false
-        })
+      try {
+        const { compliment } = await this.$axios.$get(
+          'https://complimentr.com/api'
+        )
+
+        this.compliment = `${this.user}: ${compliment
+          .charAt(0)
+          .toUpperCase()}${compliment.substring(1)}`
+        this.loading = false
+      } catch {
+        this.error = true
+        this.loading = false
+      }
     },
   },
 }
