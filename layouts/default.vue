@@ -5,9 +5,9 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400&display=swap');
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Londrina Solid', cursive;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -15,6 +15,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: #f9dcc4;
 }
 
 *,
@@ -24,17 +25,22 @@ html {
   margin: 0;
 }
 
+button,
+input {
+  font-family: 'Londrina Solid', cursive;
+}
+
 .primary-btn {
   background-color: #118ab2;
   border-radius: 1rem;
   padding: 0.6rem;
   color: #fff;
-  font-size: 1rem;
+  font-size: 1.6rem;
   text-transform: uppercase;
   font-weight: bold;
-  width: 12rem;
   cursor: pointer;
-  border: 1px solid #f2f2f2;
+  border: transparent;
+  letter-spacing: 0.15rem;
 }
 
 .primary-btn:disabled {

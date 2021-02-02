@@ -3,11 +3,11 @@
     <form @submit.prevent="handleSubmit">
       <h2>Have you been complimented today?</h2>
       <p>
-        If not, let this app fill that void and stoke your ego! Enter your name
-        below to get started!
+        If not, enter your name below and get unlimited compliments to stoke
+        your ego!
       </p>
       <div class="controls-container">
-        <input type="text" :value="user" @input="handleInput" />
+        <input type="text" placeholder="Your Name Here" :value="user" @input="handleInput" />
         <button type="submit" class="primary-btn" :disabled="!user">
           Get Started
         </button>
@@ -45,10 +45,18 @@ export default {
   display: flex;
   justify-content: center;
   text-align: center;
+  color: #ef476f;
 }
 
 form > h2 {
   margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  letter-spacing: 0.15rem;
+}
+
+form > p {
+  font-size: 1.8rem;
 }
 
 .controls-container {
@@ -63,5 +71,6 @@ form > h2 {
   height: 2rem;
   font-size: 1.6rem;
   text-align: center;
+  border: transparent;
 }
 </style>
