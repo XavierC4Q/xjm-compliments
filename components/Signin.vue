@@ -6,8 +6,12 @@
         If not, let this app fill that void and stoke your ego! Enter your name
         below to get started!
       </p>
-      <input type="text" :value="user" @input="handleInput" />
-      <button type="submit" :disabled="!user">Get Started</button>
+      <div class="controls-container">
+        <input type="text" :value="user" @input="handleInput" />
+        <button type="submit" class="primary-btn" :disabled="!user">
+          Get Started
+        </button>
+      </div>
     </form>
   </div>
 </template>
@@ -29,7 +33,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style>
 @media screen and (max-width: 767px) {
   .signin-page {
     margin: 0;
@@ -43,7 +47,21 @@ export default {
   text-align: center;
 }
 
-.signin-page > h2 {
-  margin-bottom: 1.6rem;
+form > h2 {
+  margin-bottom: 0.8rem;
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls-container > input {
+  margin: 0.8rem 0;
+  width: 24rem;
+  height: 2rem;
+  font-size: 1.6rem;
+  text-align: center;
 }
 </style>

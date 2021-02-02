@@ -3,7 +3,7 @@
     <p v-if="loading">Loading...</p>
     <div v-else-if="!loading">
       <p>{{ compliment }}</p>
-      <button type="button" @click="getCompliment">
+      <button type="button" class="primary-btn" @click="getCompliment">
         {{ `Need another compliment ${user}?` }}
       </button>
     </div>

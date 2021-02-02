@@ -24,32 +24,22 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
+.primary-btn {
+  background-color: #118ab2;
+  border-radius: 1rem;
+  padding: 0.6rem;
   color: #fff;
-  background-color: #3b8070;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 12rem;
+  cursor: pointer;
+  border: 1px solid #f2f2f2;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.primary-btn:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+  color: grey;
 }
 </style>
