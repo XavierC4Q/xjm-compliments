@@ -1,13 +1,13 @@
 <template>
   <div>
-    <p v-if="loading">Loading...</p>
-    <div v-else-if="!loading">
-      <p>{{ compliment }}</p>
+    <p class="loading" v-if="loading">Loading...</p>
+    <div class="compliments-page" v-else-if="!loading">
+      <p class="compliment">{{ compliment }}</p>
       <button type="button" class="primary-btn" @click="getCompliment">
         {{ `Need another compliment ${user}?` }}
       </button>
     </div>
-    <p v-if="error">Failed to get you a compliment 😢</p>
+    <p class="error" v-if="error">Failed to get you a compliment 😢</p>
   </div>
 </template>
 
@@ -51,3 +51,30 @@ export default {
   },
 }
 </script>
+
+<style>
+@media screen and (max-width: 767px) {
+  .compliments-page {
+    margin: 3rem 0 !important;
+  }
+}
+
+.loading {
+  margin-top: 5rem;
+}
+
+.compliments-page {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 6rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.compliment, .loading, .error {
+  color: #ef476f;
+  font-size: 3.6rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+</style>

@@ -2,12 +2,18 @@
   <div class="signin-page">
     <form @submit.prevent="handleSubmit">
       <h2>Have you been complimented today?</h2>
-      <p>
-        If not, enter your name below and get unlimited compliments to stoke
-        your ego!
-      </p>
       <div class="controls-container">
-        <input type="text" placeholder="Your Name Here" :value="user" @input="handleInput" />
+        <label for="username"
+          >If not, enter your name below and get unlimited compliments to stoke
+          your ego!</label
+        >
+        <input
+          type="text"
+          id="username"
+          placeholder="Your Name Here"
+          :value="user"
+          @input="handleInput"
+        />
         <button type="submit" class="primary-btn" :disabled="!user">
           Get Started
         </button>
@@ -40,6 +46,12 @@ export default {
   }
 }
 
+@media screen and (max-width: 412px) {
+  .controls-container > input {
+    width: 100% !important;
+  }
+}
+
 .signin-page {
   margin: 10% auto;
   display: flex;
@@ -55,14 +67,14 @@ form > h2 {
   letter-spacing: 0.15rem;
 }
 
-form > p {
-  font-size: 1.8rem;
-}
-
 .controls-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.controls-container > label {
+  font-size: 1.8rem;
 }
 
 .controls-container > input {
